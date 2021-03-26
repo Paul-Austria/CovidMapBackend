@@ -6,7 +6,6 @@ connection = sqlite3.connect("db.sqlite")
 cursor = connection.cursor()
 
 
-
 with open('test.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0;
@@ -15,9 +14,10 @@ with open('test.csv') as csv_file:
             country = row[2];
             date = row[0];
             link = row[1];
+            print(country)
             sql ="INSERT INTO Post (country, date, link) VALUES (?,?,?)"
             data = (country, date, link)
             cursor.execute(sql, data);
-            line_count +=1;
+        line_count +=1;
 
 connection.commit();
