@@ -21,10 +21,10 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                     console.log(err.message);
             }else{
                 // Table just created, creating some rows
-      /*          var insert = 'INSERT INTO Post (country, date, link) VALUES (?,?,?)'
+                var insert = 'INSERT INTO Post (country, date, link) VALUES (?,?,?)'
                 db.run(insert, ["de",new Date(), "Link"])
                 db.run(insert, ["de",new Date(), "Link2"])
-*/
+
             }
         });  
     }

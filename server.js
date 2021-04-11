@@ -3,9 +3,11 @@ const bodyParser = require("body-parser");
 var db = require("./database.js");
 const { json } = require("body-parser");
 const app = express();
+var cors = require('cors');
 
 // parse requests of content-type: application/json
 app.use(bodyParser.json());
+app.use(cors())
 
 // parse requests of content-type: application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
